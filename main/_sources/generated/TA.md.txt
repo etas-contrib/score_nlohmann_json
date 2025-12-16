@@ -13,7 +13,7 @@ Collected data from tests and monitoring of deployed software in eclipse-score/i
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-17](JLS.md#jls-17)  | A github workflow calculates the fraction of expectations covered by tests in eclipse-score/inc_nlohmann_json (TODO). | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-17](JLS.md#jls-17)  | Failure rates of CI tests are analysed for both the upstream nlohmann/json and the eclipse-score/inc_nlohmann_json repositories, and any high failure rates are reasonably justified. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-26](JLS.md#jls-26)  | Any failed CI pipeline executions in the master branch of the nlohmann/json repository are analyzed and fixed. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
@@ -36,7 +36,8 @@ _None_
 |-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |
 
 
 
@@ -82,13 +83,13 @@ by confirming that test results remain unchanged when no changes are intended.
 **Evidence**
 
 - Analysis of test data, including thresholds in relation to appropriate statistical properties.
-  - **Answer**: 
+  - **Answer**: The analysis of test data is captured by JLS-17, but no explicit quantitative thresholds are defined.
 - Analysis of failures
-  - **Answer**: 
+  - **Answer**: Provided by JLS-26 and JLS-17.
 - Analysis of spikes and trends
-  - **Answer**: 
+  - **Answer**: CI test failure rates for the upstream `nlohmann/json` repository and `eclipse-score/inc_nlohmann_json` are analysed using the time-series based GitHub Actions metrics views. This analysis is performed manually (see JLS-17). There is currently no fully automated, continuous analysis of failures.
 - Validation of analysis methods used
-  - **Answer**: 
+  - **Answer**: There is no separate formal validation of the analysis methods.
 
 **Confidence scoring**
 
@@ -98,37 +99,37 @@ that may indicate problems in development, test, or production.
 **CHECKLIST**
 
 - What fraction of Expectations are covered by the test data?
-  - **Answer**: 
+  - **Answer**: The two expectations are JLEX-01 and JLEX-02. Every statement supporting either of these expectations is ultimately supported by a test, except for WFJ-06. WFJ-06 specifies that `basic_json::accept` must accept exactly JSON values for all possible inputs. Since there are infinitely many possible inputs, this cannot be tested exhaustively. Indirect tests are provided by the rejection of ill-formed json data.
 - What fraction of Misbehaviours are covered by the monitored indicator data?
-  - **Answer**: 
+  - **Answer**: Currently none, because there is no implemented monitoring of deployed instances yet. This is a future integrator responsibility (see AOU-09, AOU-18 and AOU-19).
 - How confident are we that the indicator data are accurate and timely?
-  - **Answer**: 
+  - **Answer**: No indicator data is collected (see the previous question).
 - How reliable is the monitoring process?
-  - **Answer**: 
+  - **Answer**: See the previous question.
 - How well does the production data correlate with our test data?
-  - **Answer**: 
+  - **Answer**: There are no production data.
 - Are we publishing our data analysis?
-  - **Answer**: 
+  - **Answer**: Analyses of CI tests failure rates are published in the TSF documentation on GitHub (via ci_failure_rate_analysis.md), but there is currently no published analysis of production monitoring data.
 - Are we comparing and analysing production data vs test?
-  - **Answer**: 
+  - **Answer**: There is no production data.
 - Are our results getting better, or worse?
-  - **Answer**: 
+  - **Answer**: There are no explicit quantitative trends that indicate whether results are improving or degrading over time.
 - Are we addressing spikes/regressions?
-  - **Answer**: 
+  - **Answer**: There is currently no monitored indicator data, so spikes in indicator trends are not tracked. However, any failing tests in CI are investigated and fixed, and fuzz-testing results in the original nlohmann/json repository are analysed and addressed.
 - Do we have sensible/appropriate target failure rates?
-  - **Answer**: 
+  - **Answer**: No explicit numeric failure-rate targets are defined. The implicit target is that the CI test suite passes and known misbehaviours remain within an acceptable, manually monitored range.
 - Do we need to check the targets?
-  - **Answer**: 
+  - **Answer**: For unit and integration tests, there are no explicit failure rate targets. The implicit target is that the CI test suite passes on all supported environments, which is continuously checked by the CI workflows (see JLS-26). Since the fuzz testing runs and is investigated in the original nlohmann/json repository, there is no need to check the target.
 - Are we achieving the targets?
-  - **Answer**: 
+  - **Answer**: For the unit and integration tests, yes. The degree of target achievement for the fuzz-testing is evaluated within the original nlohmann/json repository.
 - Are all underlying assumptions and target conditions for the analysis specified?
-  - **Answer**: 
+  - **Answer**: For all tests, the underlying assumption and target condition is that they should cover all expectations, and that no test is expected to fail. Any failed tests are analyzed and reasonably justified or fixed.
 - Have the underlying assumptions been verified using known good data?
-  - **Answer**: 
+  - **Answer**:  The input data from [nlohmann/json_test_data](https://github.com/nlohmann/json_test_data/tree/master) which is used for the tests contain both known good data and known bad data. As each expectation is mapped to a sub-set of tests, it is indeed verified that the underlying assumption is reasonably verified.
 - Has the Misbehaviour identification process been verified using known bad data?
-  - **Answer**: 
+  - **Answer**: Yes. The misbehaviour identification process has been exercised using known bad data from [nlohmann/json_test_data](https://github.com/nlohmann/json_test_data/tree/master)
 - Are results shown to be reproducible?
-  - **Answer**:
+  - **Answer**: A dedicated ci_reproducible_tests target exists to run a reproducible subset of tests, but not all tests are fully reproducible (see JLS-62).
 
 
 ---
@@ -172,7 +173,8 @@ _None_
 |-|-|-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -281,9 +283,10 @@ Confidence in the nlohmann/json library is measured based on results of analysis
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-08](JLS.md#jls-08)  | Each statement within the TSF documentation is scored based on SME reviews or automatic validation functions. (TODO) | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-09](JLS.md#jls-09)  | Scores within the TSF documentation are reasonably, systematically and repeatably accumulated. (TODO) | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-08](JLS.md#jls-08)  | Each leaf node in the Trustable Graph that is not an Assumption-of-Use (AoU) is scored either based on SME review(s) alone or on a combination of SME review(s) and an automatic validator. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-09](JLS.md#jls-09)  | Scores within the TSF documentation are reasonably, systematically and repeatably accumulated. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-20](JLS.md#jls-20)  | A github workflow of eclipse-score/inc_nlohmann_json saves the history of scores in the trustable graph to derive trends. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-37](JLS.md#jls-37)  | High-level statements are decomposed into smaller, recursive statements. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -301,11 +304,12 @@ _None_
 
 ![No Image](figs/TA-CONFIDENCE.svg)
 
-|date-time|TA-CONFIDENCE|JLS-08|JLS-09|JLS-20|
-|-|-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |0.00 |
+|date-time|TA-CONFIDENCE|JLS-08|JLS-09|JLS-20|JLS-37|
+|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -336,7 +340,7 @@ The process itself should be analysed to determine score maturity, with meta-ana
 **Evidence**
 
 - Confidence scores from other TA items
-  - **Answer**: 
+  - **Answer**: Provided in JLS-08, JLS-09 and JLS-37
 
 **Confidence scoring**
 
@@ -346,13 +350,13 @@ scores given to Statements
 **Checklist**
 
 - What is the algorithm for combining/comparing the scores?
-  - **Answer**: 
+  - **Answer**: The algorithm behind the scoring in given in JLS-09
 - How confident are we that this algorithm is fit for purpose?
-  - **Answer**: 
+  - **Answer**: We are confident that the scoring algorithm is fit for purpose and is aligned with the TSF methodology described (see also JLS-09). However, at the moment, the statements require a larger number of SME reviewers to profit from the law-of-large-numbers and arrive at statistically significant scores.
 - What are the trends for each score?
-  - **Answer**: 
+  - **Answer**: At the moment, there are no trends as all statements have the review-status 'unreviewed'. However, the infrastructure for saving history of scores is already in place (see JLS-20).
 - How well do our scores correlate with external feedback signals?
-  - **Answer**:
+  - **Answer**: Such correlation can not be measured yet due to missing data.
 
 
 ---
@@ -420,7 +424,8 @@ _None_
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -531,7 +536,8 @@ Data in eclipse-score/inc_nlohmann_json is collected from tests, and from monito
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-18](JLS.md#jls-18)  | Results from tests are accurately captured. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-18](JLS.md#jls-18)  | Results from automated tests for eclipse-score/inc_nlohmann_json are automatically collected from CI-generated JUnit reports into a persistent test results database together with metadata about the executed tests and workflows. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-45](JLS.md#jls-45)  | The storage location, retention limits, and intended use of captured test result data for eclipse-score/inc_nlohmann_json are documented so that the scope and reproducibility of the available test data can be understood. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -549,11 +555,12 @@ _None_
 
 ![No Image](figs/TA-DATA.svg)
 
-|date-time|TA-DATA|JLS-18|
-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |
+|date-time|TA-DATA|JLS-18|JLS-45|
+|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |
 
 
 
@@ -581,15 +588,15 @@ Appropriate storage strategies safeguard availability across the product lifecyc
 **Evidence**
 
 - Time-stamped and traceable result records for each test execution, linked to associated system under test version and specification references.
-  - **Answer**: 
+  - **Answer**: Provided by JLS-18 and JLS-45.
 - List of monitored indicators, linked to associated specification version references.
-  - **Answer**: 
+  - **Answer**: Runtime monitoring indicators for deployed instances are not yet implemented and are expected to be defined by the integrator (see AOU-09, AOU-18 and AOU-19).
 - Time-stamped and traceable test-derived data for each indicator, linked to associated system under test version and indicator specifications references.
-  - **Answer**: 
+  - **Answer**: Indicator-level data is not yet collected and should be done by the integrator (see AOU-09).
 - List of monitored deployments, linked to associated version and configuration references.
-  - **Answer**: 
+  - **Answer**: Not available. Monitoring of deployed instances should be specified by the integrator (see AOU-09, AOU-18 and AOU-19).
 - Time-stamped and traceable production data for each indicator, linked to associated deployment metadata and specification references.
-  - **Answer**: 
+  - **Answer**: Not available. Should be done by the integrator (see AOU-09, AOU-18 and AOU-19).
 
 **Confidence scoring**
 
@@ -600,30 +607,30 @@ monitored deployments.
 **Checklist**
 
 - Is all test data stored with long-term accessibility?
-  - **Answer**: 
+  - **Answer**: No. Test results are collected into a persistent database as part of the CI workflows, which is done as a proof of concept. Due to GitHub storage constraints, the storage of this database is currently limited.
 - Is all monitoring data stored with long-term accessibility?
-  - **Answer**: 
+  - **Answer**: No. Dedicated monitoring data from deployed software is not collected yet. But it is expected to be implemented by the integrator (see AOU-09, AOU-18 and AOU-19).
 - Are extensible data models implemented?
-  - **Answer**: 
+  - **Answer**: Test-result data is stored in a SQLite database with separate tables for workflow runs and individual test results (see JLS-18). This schema can be extended with additional fields or tables if needed.
 - Is sensitive data handled correctly (broadcasted, stored, discarded, or anonymised) with appropriate encryption and redundancy?
-  - **Answer**: 
+  - **Answer**: This is not explicitly applicable. The captured test data does not include personal or sensitive data.
 - Are proper backup mechanisms in place?
-  - **Answer**: 
+  - **Answer**: No explicit project-level backup mechanism is defined for the test results database beyond GitHub’s own infrastructure.
 - Are storage and backup limits tested?
-  - **Answer**: 
+  - **Answer**: The `capture_test_data_memory_sensitive.py` script enforces size limits for the persistent database and fails the workflow if they are exceeded. There is no backup mechanism.
 - Are all data changes traceable?
-  - **Answer**: 
+  - **Answer**:  Yes, for test data. Updates to `TSF/MemoryEfficientTestResultData.db` are performed by CI workflows and committed to the `save_historical_data` branch, so Git history records each change.
 - Are concurrent changes correctly managed and resolved?
-  - **Answer**: 
+  - **Answer**: Largely yes for test data. The ubuntu workflow uses a concurrency group that cancels in-progress runs for the same reference, so typically only one job updates the persistent database at a time and remaining conflicts would surface as failed pushes and require manual resolution.
 - Is data accessible only to intended parties?
-  - **Answer**: 
+  - **Answer**: Since the library is open source, there are no unintended parties.
 - Are any subsets of our data being published?
-  - **Answer**:
+  - **Answer**: Yes, as a proof of concept, CI test result data is committed to the `save_historical_data` branch in the SQLite database `TSF/MemoryEfficientTestResultData.db`, which is publicly accessible via this GitHub repository.
 
 
 ---
 
-### TA-FIXES | Reviewed: ✔ | Score: 0.10714 
+### TA-FIXES | Reviewed: ✔ | Score: 0.375 
 In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied.
 
 
@@ -631,15 +638,15 @@ In the nlohmann/json repository, known bugs or misbehaviours are analysed and tr
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.24 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.51 | ✔ Item Reviewed<br>✔ Link Reviewed |
 
 **Supporting Items:**
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-05](JLS.md#jls-05)  | The nlohmann/json library is widely used and actively maintained; bugs and misbehaviours are tracked publicly and transparently. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-04](JLS.md#jls-04)  | External dependencies within nlohmann/json are checked for potential security vulnerabilities with each pull request to main. Merging is blocked until all warnings are resolved. | 0.00 | ✔ Item Reviewed<br>✔ Link Reviewed |
-| [JLS-11](JLS.md#jls-11)  | Outstanding bugs or misbehaviours are analyzed within eclipse-score/inc_nlohmann_json to determine whether they are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-05](JLS.md#jls-05)  | The nlohmann/json library is widely used and actively maintained; bugs and misbehaviours are tracked publicly and transparently. | 0.88 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-04](JLS.md#jls-04)  | External dependencies within nlohmann/json are checked for potential security vulnerabilities with each pull request to main. Merging is blocked until all warnings are resolved. | 1.00 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [JLS-11](JLS.md#jls-11)  | Outstanding bugs or misbehaviours are analyzed within eclipse-score/inc_nlohmann_json to determine whether they are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-30](JLS.md#jls-30)  | Outstanding CVEs are analyzed within eclipse-score/inc_nlohmann_json to determine whether they can be dismissed, and/or are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-29](JLS.md#jls-29)  | Known bugs, misbehaviours and CVEs are analyzed and either fixed or mitigated in the nlohmann/json repository. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-28](JLS.md#jls-28)  | Outstanding bugs and misbehaviours are triaged in the nlohmann/json repository. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
@@ -665,7 +672,8 @@ _None_
 |-|-|-|-|-|-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.11 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
-|2025-12-10 15:02:43.179491|0.11 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
+|2025-12-16 13:14:25|0.38 |0.88 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
+|2025-12-16 14:03:34.403563|0.38 |0.88 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
 
 
 
@@ -810,7 +818,8 @@ _None_
 |-|-|
 |2025-11-26 12:04:09|0.00 |
 |2025-12-10 14:14:18|0.00 |
-|2025-12-10 15:02:43.179491|0.00 |
+|2025-12-16 13:14:25|0.00 |
+|2025-12-16 14:03:34.403563|0.00 |
 
 
 
@@ -921,7 +930,7 @@ consideration?
 
 ---
 
-### TA-INPUTS | Reviewed: ⨯ | Score: 0.0 
+### TA-INPUTS | Reviewed: ⨯ | Score: 0.31667 
 All inputs to the nlohmann/json library are assessed, to identify potential risks and issues.
 
 
@@ -929,13 +938,18 @@ All inputs to the nlohmann/json library are assessed, to identify potential risk
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-PROVENANCE](TT.md#tt-provenance)  | All inputs (and attestations for claims) for the nlohmann/json library are provided with known provenance. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [TT-PROVENANCE](TT.md#tt-provenance)  | All inputs (and attestations for claims) for the nlohmann/json library are provided with known provenance. | 0.25 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-04](JLS.md#jls-04)  | External dependencies within nlohmann/json are checked for potential security vulnerabilities with each pull request to main. Merging is blocked until all warnings are resolved. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-04](JLS.md#jls-04)  | External dependencies within nlohmann/json are checked for potential security vulnerabilities with each pull request to main. Merging is blocked until all warnings are resolved. | 1.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-47](JLS.md#jls-47)  | The nlohmann/json library only consists of source code in the form of a single header file, and has no binary artifacts. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-34](JLS.md#jls-34)  | The nlohmann/json library has no external components or dependencies besides the C++ standard components. | 0.90 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-48](JLS.md#jls-48)  | The nlohmann/json project transparently lists any third party tools used in building, testing and documenting the project. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-49](JLS.md#jls-49)  | The eclipse-score/inc_nlohmann_json project mirrors the external nlohmann/json_test_data repository, containing test data used by the unit tests in nlohmann/json, such that the test suite can be executed without internet connectivity. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-50](JLS.md#jls-50)  | All third party tools used in nlohmann/json for building, testing and documenting the project are assessed within eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -953,11 +967,12 @@ _None_
 
 ![No Image](figs/TA-INPUTS.svg)
 
-|date-time|TA-INPUTS|JLS-04|
-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |
+|date-time|TA-INPUTS|JLS-04|JLS-47|JLS-34|JLS-48|JLS-49|JLS-50|
+|-|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |N/A|0.00 |N/A|N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |N/A|0.90 |N/A|N/A|N/A|
+|2025-12-16 13:14:25|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
 
 
 
@@ -1009,33 +1024,33 @@ As a result, for example, any binary inputs without reproducible build steps or 
 
 - List of components used to build nlohmann/json, including:
   - Whether content is provided as source or binary
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library consists of only source code in the form of a single header file, and has no binary artifacts (see JLS-47).
 - Record of component assessments:
   - Originating project and version
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library has no external components (see JLS-34).
   - Date of assessments and identity of assessors
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library has no external components (see JLS-34).
   - Role of component in nlohmann/json
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library has no external components (see JLS-34).
   - Sources of bug and risk data
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library has no external components (see JLS-34).
   - Potential misbehaviours and risks identified and assessed
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library has no external components (see JLS-34).
 - List of tools used to build and verify nlohmann/json
-  - **Answer**: 
+  - **Answer**: Provided in JLS-48 and JLS-49.
 - Record of tool assessments:
   - Originating project and tool version
-    - **Answer**: 
+    - **Answer**: Provided in JLS-48 and JLS-50.
   - Date of assessments and identity of assessors
-    - **Answer**: 
+    - **Answer**: Provided in JLS-50.
   - Role of the tool in nlohmann/json releases
-    - **Answer**: 
+    - **Answer**: Provided in JLS-48 and JLS-50.
   - Potential misbehaviours and impacts
-    - **Answer**: 
+    - **Answer**: Provided in JLS-50.
   - Detectability and severity of impacts
-    - **Answer**: 
+    - **Answer**: Provided in JLS-50.
 - Tests or measures to address identified impacts
-  - **Answer**: 
+  - **Answer**: Provided in JLS-50.
 
 **Confidence scoring**
 
@@ -1046,37 +1061,37 @@ and impact for nlohmann/json, and the sources of risk and issue data identified.
 **Checklist**
 
 - Are there components that are not on the list?
-  - **Answer**: 
+  - **Answer**: No, the nlohmann/json library has no components besides the single hpp header file. 
 - Are there assessments for all components?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no components besides the single hpp header file. 
 - Has an assessment been done for the current version of the component?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no components besides the single hpp header file. 
 - Have sources of bug and/or vulnerability data been identified?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no components besides the single hpp header file. 
 - Have additional tests and/or Expectations been documented and linked to
   component assessment?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no components besides the single hpp header file.
 - Are component tests run when integrating new versions of components?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no components besides the single hpp header file.
 - Are there tools that are not on the list?
-  - **Answer**: 
+  - **Answer**: No tools have been identified which are not listed.
 - Are there impact assessments for all tools?
-  - **Answer**: 
+  - **Answer**: Yes, see JLS-50.
 - Have tools with high impact been qualified?
-  - **Answer**: 
+  - **Answer**: Yes, see JLS-50.
 - Were assessments or reviews done for the current tool versions?
-  - **Answer**: 
+  - **Answer**: Yes, see JLS-50.
 - Have additional tests and/or Expectations been documented and linked to
   tool assessments?
-  - **Answer**: 
+  - **Answer**: Yes, the CI-pipeline includes tests on some third party tools, see JLS-50.
 - Are tool tests run when integrating new versions of tools?
-  - **Answer**: 
+  - **Answer**: Yes, the tool tests are integrated into the CI-pipeline, see JLS-50.
 - Are tool and component tests included in release preparation?
-  - **Answer**: 
+  - **Answer**: The tool tests are integrated into the CI-pipeline, see JLS-50.
 - Can patches be applied, and then upstreamed for long-term maintenance?
-  - **Answer**: 
+  - **Answer**: Yes, if ever a misbehaviour is found and patched, then a pull-request to the original project repository can be opened to upstream the changes.
 - Do all dependencies comply with acceptable licensing terms?
-  - **Answer**:
+  - **Answer**: Yes, the library is licensed under MIT License.
 
 
 ---
@@ -1095,8 +1110,10 @@ All constructed iterations of the nlohmann/json library include source code, bui
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-10](JLS.md#jls-10)  | Every release of nlohmann/json includes source code, build instructions, tests and attestations. (TODO: Test result summary) | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-10](JLS.md#jls-10)  | Every release of the nlohmann/json library includes source code, build instructions, test code and test results summaries. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-19](JLS.md#jls-19)  | All library components, build dependencies, and build tools in the nlohmann/json repository are declared in build system manifests. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-52](JLS.md#jls-52)  | Releases of the nlohmann/json library contain a comprehensive set of attestations. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-51](JLS.md#jls-51)  | All source code of the nlohmann/json library is mirrored within eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 
 
 
@@ -1114,11 +1131,12 @@ _None_
 
 ![No Image](figs/TA-ITERATIONS.svg)
 
-|date-time|TA-ITERATIONS|JLS-10|JLS-19|
-|-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |
+|date-time|TA-ITERATIONS|JLS-10|JLS-19|JLS-52|JLS-51|
+|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |0.00 |N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |0.00 |N/A|N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1156,21 +1174,21 @@ For releases, additional documentation should summarise all changes across the i
 
 - list of components with source
   - source code
-    - **Answer**: 
+    - **Answer**: Provided by JLS-10.
   - build instructions
-    - **Answer**: 
+    - **Answer**: Provided by JLS-10 and JLS-19.
   - test code
-    - **Answer**: 
+    - **Answer**: Provided by JLS-10.
   - test results summary
-    - **Answer**: 
+    - **Answer**: Provided by JLS-10.
   - attestations
-    - **Answer**: 
+    - **Answer**: Provided by JLS-52.
 
 - list of components where source code is not available
   - risk analysis
-    - **Answer**: 
+    - **Answer**: There are no components without source code within this project.
   - attestations
-    - **Answer**: 
+    - **Answer**: There are no components without source code within this project.
 
 **Confidence scoring**
 
@@ -1184,18 +1202,18 @@ Confidence scoring for TA-ITERATIONS based on
 
 - How much of the software is provided as binary only, expressed as a
   fraction of the BoM list?
-  - **Answer**: 
+  - **Answer**: 0% is provided as binary only. The entire library consists of source code in the form of a single C++ header file.
 - How much is binary, expressed as a fraction of the total storage footprint?
-  - **Answer**: 
+  - **Answer**: 0% is provided as binary. The entire library consists of source code in the form of a single C++ header file.
 - For binaries, what claims are being made and how confident are we in the
   people/organisations making the claims?
-  - **Answer**: 
+  - **Answer**: 0% is provided as binary. The entire library consists of source code in the form of a single C++ header file.
 - For third-party source code, what claims are we making, and how confident
   are we about these claims?
-  - **Answer**: 
+  - **Answer**: The nlohmann/json library has no external dependencies/accesses to third party source code, as stated in JLS-34.
 - For software developed by us, what claims are we making, and how confident
   are we about these claims?
-  - **Answer**:
+  - **Answer**: There is no software developed by us, as we just use the original nlohmann/json library within eclipse_score/inc_nlohmann_json. For the code developed in nlohmann/json, all claims and confidence are provided in the statements. See e.g., all the no-json-faults (NJF) items.
 
 
 ---
@@ -1214,7 +1232,13 @@ Manual methodologies applied for the nlohmann/json library by contributors, and 
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-13](JLS.md#jls-13)  | The S-Core methodologies are followed in eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-13](JLS.md#jls-13)  | For changes that affect the behaviour or public API of the nlohmann/json library, contributors manually update the library documentation and locally rebuild it for verification. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-36](JLS.md#jls-36)  | Updates of the eclipse-score/inc_nlohmann_json repository are carried out in accordance with the defined and documented update process in TSF/README.md. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-40](JLS.md#jls-40)  | The manual process for reporting vulnerabilities in the nlohmann/json library is well defined and documented in the project's security policy and vulnerability reporting template. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-41](JLS.md#jls-41)  | The manual process for extending the nlohmann/json library's test suite is well-defined and documented, such that code coverage remains at (or close to) 100% when fixes or other non-trivial changes are proposed. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-42](JLS.md#jls-42)  | All manual pull requests to the nlohmann/json repository that introduce non-trivial changes are expected to explain the rationale for the proposed change and to link to an existing issue, in accordance with the project's contribution guidelines. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-43](JLS.md#jls-43)  | Feature requests for the nlohmann/json repository are raised in the project's GitHub discussions and are actively reviewed and answered by the maintainer. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-44](JLS.md#jls-44)  | The manual process for reporting bugs in the nlohmann/json library is well defined and documented in the project's contribution guidelines and bug report template. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -1232,11 +1256,12 @@ _None_
 
 ![No Image](figs/TA-METHODOLOGIES.svg)
 
-|date-time|TA-METHODOLOGIES|JLS-13|
-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |
+|date-time|TA-METHODOLOGIES|JLS-13|JLS-36|JLS-40|JLS-41|JLS-42|JLS-43|JLS-44|
+|-|-|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |N/A|N/A|N/A|N/A|N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |N/A|N/A|N/A|N/A|N/A|N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1272,15 +1297,15 @@ Any resulting changes from reviews must follow change control, regardless of who
 **Evidence**
 
 - Manual process documentation
-  - **Answer**: 
+  - **Answer**: Manual processes relevant for nlohmann/json have been identified and documented (see JLS-36, 40, 41, 42, 43 and 44).
 - References to methodologies applied as part of these processes
-  - **Answer**: 
+  - **Answer**: The corresponding references are given for each statement (see JLS-36, 40, 41, 42, 43 and 44).
 - Results of applying the processes
-  - **Answer**: 
+  - **Answer**: Results include reviewed and merged pull requests, maintained high test coverage, published security advisories and resolved issues, updated documentation on json.nlohmann.me (see JLS-36, 40, 41, 42, 43 and 44).
 - Criteria used to confirm that the processes were applied correctly
-  - **Answer**: 
+  - **Answer**: The criteria are given in the documentation (see JLS-36, 40, 41, 42, 43 and 44).
 - Review records for results
-  - **Answer**: 
+  - **Answer**: Review records are provided by GitHub pull-request reviews and comments, issue and advisory discussions, as well as release notes describing behavioural and documentation changes (see JLS-36, 40, 41, 42, 43 and 44).
 
 **Confidence scoring**
 
@@ -1292,25 +1317,25 @@ in comparison to the analysed results
 **Checklist**
 
 - Are the identified gaps documented clearly to justify using a manual process?
-  - **Answer**: 
+  - **Answer**: Manual processes are introduced where automation is not feasible and are clearly documented. While no explicit justification for each manual step is provided, the rationale is generally clear from the surrounding context.
 - Are the goals for each process clearly defined?
-  - **Answer**: 
+  - **Answer**: Yes. For the manual processes that were found the goals are clearly defined in the corresponding documentation. The goals include ensuring that user-facing documentation accurately reflect behavioural and API changes, correctly handling bug and vulnerability reports, and keeping the test suite at (or close to) 100% coverage for non-trivial changes.
 - Is the sequence of procedures documented in an unambiguous manner?
-  - **Answer**: 
+  - **Answer**: Largely yes. Where necessary, examples and templates make the expected sequence explicit.
 - Can improvements to the processes be suggested and implemented?
-  - **Answer**: 
+  - **Answer**: Improvements are proposed via GitHub issues or pull request.
 - How frequently are processes changed?
-  - **Answer**: 
+  - **Answer**: Process changes are infrequent and usually happen with a new nlohmann/json release, when a need for improvement is identified. 
 - How are changes to manual processes communicated?
-  - **Answer**: 
+  - **Answer**: Mostly, changes are communicated through updated documentation in the repository and release notes.
 - Are there any exceptions to the processes?
-  - **Answer**: 
+  - **Answer**: Known exceptions include automatic dependency updates from Dependabot as well as smaller trivial changes (such as fixing typos in documentation). These are exempted from having to manually create issues and explain the rationale behind the change. 
 - How is evidence of process adherence recorded?
-  - **Answer**: 
+  - **Answer**: Evidence in GitHub; PR histories with reviews and passing checks, issue and advisory discussions, audit trails for documentation and test updates
 - How is the effectiveness of the process evaluated?
-  - **Answer**: 
+  - **Answer**: Effectiveness is evaluated indirectly via stable releases, test coverage, and documentation quality.
 - Is ongoing training required to follow these processes?
-  - **Answer**:
+  - **Answer**: No formal training is required, but contributors are expected to be familiar with the contribution guidelines and security policy.
 
 
 ---
@@ -1329,7 +1354,7 @@ Prohibited misbehaviours for the nlohmann/json library are identified, and mitig
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-02](JLS.md#jls-02)  | Fuzz testing is used in the original nlohmann/json repository (https://github.com/nlohmann/json) to uncover edge cases and failure modes throughout development. (https://github.com/nlohmann/json/blob/develop/tests/fuzzing.md) | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-02](JLS.md#jls-02)  | Fuzz testing is used in the nlohmann/json repository to uncover edge cases and failure modes throughout development. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-24](JLS.md#jls-24)  | The nlohmann/json library recognizes malformed JSON and returns an exception. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-25](JLS.md#jls-25)  | Malicious code changes in nlohmann/json are mitigated by code reviews, adhering to the contribution guidelines and security policy specified by nlohmann/json. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-31](JLS.md#jls-31)  | The nlohmann/json repository uses a static code analysis tool. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
@@ -1354,7 +1379,8 @@ _None_
 |-|-|-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1514,7 +1540,11 @@ Construction of releases for the nlohmann/json library is fully repeatable and t
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
 | [JLS-14](JLS.md#jls-14)  | The SHA value of the nlohmann/json library in use within eclipse-score/inc_nlohmann_json coincides with the SHA value provided by Niels Lohmann for that version. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-21](JLS.md#jls-21)  | A score is calculated based on the number of mirrored and unmirrored things. (TODO) | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-38](JLS.md#jls-38)  | Every release of the nlohmann/json library shall provide configuration management for build instructions and infrastructure. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-10](JLS.md#jls-10)  | Every release of the nlohmann/json library includes source code, build instructions, test code and test results summaries. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-19](JLS.md#jls-19)  | All library components, build dependencies, and build tools in the nlohmann/json repository are declared in build system manifests. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
+| [JLS-49](JLS.md#jls-49)  | The eclipse-score/inc_nlohmann_json project mirrors the external nlohmann/json_test_data repository, containing test data used by the unit tests in nlohmann/json, such that the test suite can be executed without internet connectivity. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-53](JLS.md#jls-53)  | Given the same version of the repository, configuration, and documented environment, the build process shall produce identical single-include header files. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 
 
 
@@ -1532,11 +1562,12 @@ _None_
 
 ![No Image](figs/TA-RELEASES.svg)
 
-|date-time|TA-RELEASES|JLS-14|JLS-21|
-|-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |
+|date-time|TA-RELEASES|JLS-14|JLS-38|JLS-10|JLS-19|JLS-49|JLS-53|
+|-|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |N/A|0.00 |0.00 |N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |N/A|0.00 |0.00 |N/A|N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1578,16 +1609,16 @@ to TT-RESULTS analysis.
 **Evidence**
 
 - list of reproducible SHAs
-  - **Answer**: 
+  - **Answer**: JLS-14 ensures that the SHA value of the nlohmann/json library used within eclipse-score/inc_nlohmann_json coincides with the SHA value provided by Niels Lohmann (for the same version).
 - list of non-reproducible elements with:
   - explanation and justification
-    - **Answer**: 
+    - **Answer**: The only elements which are not reproducible are 8 CMake integration tests. The list of these, together with explanation and justification, is provided in TSF/docs/non_reproducible_tests.md.
   - details of what is not reproducible
-    - **Answer**: 
+    - **Answer**: The only elements which are not reproducible are 8 CMake integration tests. The list of these, together with explanation and justification, is provided in TSF/docs/non_reproducible_tests.md.
 - evidence of configuration management for build instructions and infrastructure
-  - **Answer**: 
+  - **Answer**: Provided by JLS-10 and JLS-19.
 - evidence of repeatable builds
-  - **Answer**: 
+  - **Answer**: Provided by JLS-53.
 
 **Confidence scoring**
 
@@ -1606,23 +1637,23 @@ R / (R + N + B + M / (M + X))
 
 - How confident are we that all components are taken from within our
   controlled environment?
-  - **Answer**: 
+  - **Answer**: We are very confident that all components are taken from within our controlled environment, as there are currently no external components used within the nlohmann/json library (as documented in JLS-34).
 - How confident are we that all of the tools we are using are also under our
   control?
-  - **Answer**: 
+  - **Answer**: All tools used by nlohmann/json are mirrored within our controlled environment eclipse-score/inc_nlohmann_json. Therefore, these tools are under full control of the Eclipse S-Core organisation.
 - Are our builds repeatable on a different server, or in a different context?
-  - **Answer**: 
+  - **Answer**: Since there is no "build" of the header-only library, yes.
 - How sure are we that our builds don't access the internet?
-  - **Answer**: 
+  - **Answer**: We are confident that our builds don't access the internet, since there is no "build" of the header-only library.
 - How many of our components are non-reproducible?
-  - **Answer**: 
+  - **Answer**:  All of our components are reproducible, since we only use a single component, the nlohmann/json library.
 - How confident are we that our reproducibility check is correct?
-  - **Answer**:
+  - **Answer**: We are very confident that our reproducibility check is correct.
 
 
 ---
 
-### TA-SUPPLY_CHAIN | Reviewed: ⨯ | Score: 0.0 
+### TA-SUPPLY_CHAIN | Reviewed: ⨯ | Score: 0.18 
 All sources and tools for the nlohmann/json library are mirrored in our controlled environment.
 
 
@@ -1630,13 +1661,17 @@ All sources and tools for the nlohmann/json library are mirrored in our controll
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-PROVENANCE](TT.md#tt-provenance)  | All inputs (and attestations for claims) for the nlohmann/json library are provided with known provenance. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [TT-PROVENANCE](TT.md#tt-provenance)  | All inputs (and attestations for claims) for the nlohmann/json library are provided with known provenance. | 0.25 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
 | [JLS-23](JLS.md#jls-23)  | The Eclipse S-CORE organization mirrors the nlohmann/json project in a github fork. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-49](JLS.md#jls-49)  | The eclipse-score/inc_nlohmann_json project mirrors the external nlohmann/json_test_data repository, containing test data used by the unit tests in nlohmann/json, such that the test suite can be executed without internet connectivity. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-51](JLS.md#jls-51)  | All source code of the nlohmann/json library is mirrored within eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-34](JLS.md#jls-34)  | The nlohmann/json library has no external components or dependencies besides the C++ standard components. | 0.90 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-66](JLS.md#jls-66)  | The mirror of nlohmann/json is configured via infrastructure under direct control, and rejects history rewrites. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 
 
 
@@ -1654,11 +1689,12 @@ _None_
 
 ![No Image](figs/TA-SUPPLY_CHAIN.svg)
 
-|date-time|TA-SUPPLY_CHAIN|JLS-23|
-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |
+|date-time|TA-SUPPLY_CHAIN|JLS-23|JLS-49|JLS-51|JLS-34|JLS-66|
+|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |N/A|N/A|0.00 |N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |N/A|N/A|0.90 |N/A|
+|2025-12-16 13:14:25|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
+|2025-12-16 14:03:34.403563|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
 
 
 
@@ -1693,20 +1729,20 @@ binaries present within the repositories of the components and tools used.
 
 - list of all nlohmann/json components including
   - URL of mirrored projects in controlled environment
-    - **Answer**: 
+    - **Answer**: Provided in JLS-23, JLS-49, and complemented by JLS-34. 
   - URL of upstream projects
-    - **Answer**: 
+    - **Answer**: Provided in JLS-23 and JLS-49.
 - successful build of nlohmann/json from source
   - without access to external source projects
-    - **Answer**: 
+    - **Answer**: As a header-only library, the nlohmann/json library requires no compilation. For the build of the test suite, see JLS-49.
   - without access to cached data
-    - **Answer**: 
+    - **Answer**: The library and test suite build require no cached data. CMake configuration runs from scratch, generating all artifacts deterministically as shown in ubuntu.yml workflow clean builds.
 - update logs for mirrored projects
-  - **Answer**: 
+  - **Answer**: Updates of nlohmann/json are documented in release notes (see JLS-13). The update process of eclipse-score/inc_nlohmann_json is detailed in the "Update Concept" section of TSF/README.md.
 - mirrors reject history rewrites
-  - **Answer**: 
+  - **Answer**: The eclipse-score/inc_nlohmann_json main branch is set up with a branch protection rule, which disallows force pushes and requires code reviews for all changes. The branch protection rule prevents history rewrites (see JLS-66).
 - mirroring is configured via infrastructure under direct control
-  - **Answer**: 
+  - **Answer**: The eclipse-score/inc_nlohmann_json repository, which contains the mirrors, is configured by "Otterdog", which is under direct control by eclipse-score maintainers (see JLS-66).
 
 **Confidence scoring**
 
@@ -1717,17 +1753,17 @@ compromised.
 **Checklist**
 
 - Could there be other components, missed from the list?
-  - **Answer**: 
+  - **Answer**: Yes. The build toolchain is not mirrored (e.g., compilers like GCC and Clang, build tools like Bazel, and CMake, etc). The potential risk of these being deleted or unavailable is however negligible and accepted.
 - Does the list include all toolchain components?
-  - **Answer**: 
+  - **Answer**: See answer above.
 - Does the toolchain include a bootstrap?
-  - **Answer**: 
+  - **Answer**: See answer above.
 - Could the content of a mirrored project be compromised by an upstream change?
-  - **Answer**: 
+  - **Answer**: No. Upstream changes are only introduced into the mirror through manually reviewed merge requests, and not automatically.
 - Are mirrored projects up to date with the upstream project?
-  - **Answer**: 
+  - **Answer**: Yes. As of 4/12/2025 both the nlohmann/json mirror and nlohmann/json_test_data mirror are up to date with the upstream projects.
 - Are mirrored projects based on the correct upstream?
-  - **Answer**:
+  - **Answer**: Yes.
 
 
 ---
@@ -1747,6 +1783,9 @@ All tests for the nlohmann/json library, and its build and test environments, ar
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
 | [JLS-16](JLS.md#jls-16)  | A list of tests, which is extracted from the test execution, is provided, along with a list of test environments. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-02](JLS.md#jls-02)  | Fuzz testing is used in the nlohmann/json repository to uncover edge cases and failure modes throughout development. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-62](JLS.md#jls-62)  | All tests except the ones which are excluded when using the flag "ctest -LE not_reproducible" are reproducible. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
+| [JLS-61](JLS.md#jls-61)  | Any Github Actions used in the testing process are pinned to specific commit SHAs to ensure consistent action behavior across runs. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 
 
 
@@ -1764,11 +1803,12 @@ _None_
 
 ![No Image](figs/TA-TESTS.svg)
 
-|date-time|TA-TESTS|JLS-16|
-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |
-|2025-12-10 14:14:18|0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |
+|date-time|TA-TESTS|JLS-16|JLS-02|JLS-62|JLS-61|
+|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |0.00 |N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |0.00 |N/A|N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1797,13 +1837,13 @@ TA-ITERATIONS.
 **Evidence**
 
 - Test build environment reproducibility
-  - **Answer**: 
+  - **Answer**: Provided by JLS-62.
 - Test build configuration
-  - **Answer**: 
+  - **Answer**: Provided by JLS-16.
 - Test build reproducibility
-  - **Answer**: 
+  - **Answer**: Provided by JLS-62.
 - Test environment configuration
-  - **Answer**: 
+  - **Answer**: Provided by JLS-16.
 
 **Confidence scoring**
 
@@ -1813,21 +1853,22 @@ tooling and their build environments are repeatable and reproducible.
 **CHECKLIST**
 
 - How confident are we that our test tooling and environment setups used for tests, fault inductions, and analyses are reproducible?
+  - **Answer**:  The test can be reproduced any time on any machine running the versions of the operating systems and compilers as provided, as described in AOU-14.
   - Are any exceptions identified, documented and justified?
-    - **Answer**: 
+    - **Answer**: To the best of our knowledge, there are no exceptions identified.
 - How confident are we that all test components are taken from within our controlled environment?
-  - **Answer**: 
+  - **Answer**: All tests are either self-contained or download test data from [within Eclipse S-CORE](https://github.com/eclipse-score/inc_nlohmann_json/tree/json_test_data_version_3_1_0_mirror).
 - How confident are we that all of the test environments we are using are also under our control?
-  - **Answer**: 
+  - **Answer**: Very confident, as the environments are standard docker images of ubuntu and standard versions of compilers that are executed in our CI pipeline.
 - Do we record all test environment components, including hardware and infrastructure used for exercising tests and processing input/output data?
-  - **Answer**: 
+  - **Answer**: No, since the tests are independent from hardware, there is no record of hardware or infrastructure.
 - How confident are we that all tests scenarios are repeatable?
-  - **Answer**:
+  - **Answer**: All test scenarios are repeated daily in the CI pipeline.
 
 
 ---
 
-### TA-UPDATES | Reviewed: ✔ | Score: 0.375 
+### TA-UPDATES | Reviewed: ✔ | Score: 0.65 
 nlohmann/json library components, configurations and tools are updated under specified change and configuration management controls.
 
 
@@ -1835,15 +1876,15 @@ nlohmann/json library components, configurations and tools are updated under spe
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.24 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.51 | ✔ Item Reviewed<br>✔ Link Reviewed |
 
 **Supporting Items:**
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-06](JLS.md#jls-06)  | Pull requests in the nlohmann/json repository are merged only after code review. | 0.35 | ✔ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-07](JLS.md#jls-07)  | The develop branch of nlohmann/json is protected, i.e. no direct commits are possible. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-12](JLS.md#jls-12)  | The nlohmann/json repository has well-defined community standards, including a contribution guideline and a security policy. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-06](JLS.md#jls-06)  | Pull requests in the nlohmann/json repository are merged only after code review. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-07](JLS.md#jls-07)  | The develop branch of nlohmann/json is protected, i.e. no direct commits are possible. | 1.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-12](JLS.md#jls-12)  | The nlohmann/json repository has well-defined community standards, including a contribution guideline and a security policy. | 1.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-32](JLS.md#jls-32)  | All pull requests to the develop branch in the nlohmann/json repository trigger a request for review from Niels Lohmann (@nlohmann). | 1.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-35](JLS.md#jls-35)  | Pull requests in the nlohmann/json repository are merged only after running CI-tests and successfully passing the pipeline. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-34](JLS.md#jls-34)  | The nlohmann/json library has no external components or dependencies besides the C++ standard components. | 0.90 | ✔ Item Reviewed<br>⨯ Link Reviewed |
@@ -1868,7 +1909,8 @@ _None_
 |-|-|-|-|-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.38 |0.35 |0.00 |0.00 |1.00 |0.00 |0.90 |
-|2025-12-10 15:02:43.179491|0.38 |0.35 |0.00 |0.00 |1.00 |0.00 |0.90 |
+|2025-12-16 13:14:25|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
+|2025-12-16 14:03:34.403563|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
 
 
 
@@ -1940,8 +1982,8 @@ dependencies.
 
 ---
 
-### TA-VALIDATION | Reviewed: ⨯ | Score: 0.0 
-All specified tests are executed repeatedly, under defined conditions in controlled environments, according to specified objectives. (To revisit)
+### TA-VALIDATION | Reviewed: ✔ | Score: 0.0 
+All specified tests are executed repeatedly, under defined conditions in controlled environments, according to specified objectives.
 
 
 **Supported Requests:**
@@ -1954,8 +1996,8 @@ All specified tests are executed repeatedly, under defined conditions in control
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [JLS-01](JLS.md#jls-01)  | The CI pipeline in nlohmann/json executes the unit and integration test suites on each pull request (opened, reopened, synchronized). | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
-| [JLS-22](JLS.md#jls-22)  | A github workflow of eclipse-score/inc_nlohmann_json executes the unit tests daily and saves the results as time-series data. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-01](JLS.md#jls-01)  | The CI pipeline in the upstream nlohmann/json repository executes the unit and integration test suites on each pull request (opened, reopened, synchronized). | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-22](JLS.md#jls-22)  | A scheduled GitHub workflow in eclipse-score/inc_nlohmann_json triggers the nlohmann/json unit and integration test at least once per day and records their outcomes as time-stamped entries in the persistent test results database. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -1977,7 +2019,8 @@ _None_
 |-|-|-|-|
 |2025-11-26 12:04:09|0.00 |0.00 |0.00 |
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |
-|2025-12-10 15:02:43.179491|0.00 |0.00 |0.00 |
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |
+|2025-12-16 14:03:34.403563|0.00 |0.00 |0.00 |
 
 
 
@@ -2012,9 +2055,9 @@ A strategy to generate appropriate data addresses quantity, quality, and selecti
 **Evidence**
 
 - Test results from per-change tests
-  - **Answer**: 
+  - **Answer**: CI runs the tests on each change (JLS-01), and their results are stored in the persistent test results database (JLS-18, JLS-45).
 - Test results from scheduled tests as time series
-  - **Answer**: 
+  - **Answer**: Provided in JLS-22.
 
 **Confidence scoring**
 
@@ -2024,28 +2067,28 @@ results for all expected tests (both pass / fail and performance).
 **Checklist**
 
 - Is the selection of tests correct?
-  - **Answer**: 
+  - **Answer**: The upstream nlohmann/json test suite plus the additional TSF-related tests cover the expected behaviours captured in the Expectations (JLEX-01, JLEX-02).
 - Are the tests executed enough times?
-  - **Answer**: 
+  - **Answer**: Yes, tests run on each pull request and push via the CI workflows (JLS-01) and additionally on a daily schedule in inc_nlohmann_json (JLS-22).
 - How confident are we that all test results are being captured?
-  - **Answer**: 
+  - **Answer**: For the CI workflows that write to the persistent test-results database we are reasonably confident, since capture is automated by the TSF scripts (JLS-18, JLS-45).
 - Can we look at any individual test result, and establish what it relates to?
-  - **Answer**: 
+  - **Answer**: For CI runs, yes. Each stored test result is linked to a specific CI workflow run (repo, run_id, run_attempt) and timestamp in workflow_info, so we can relate it back to the corresponding GitHub workflow execution, code revision and CI configuration (see JLS-18).
 - Can we trace from any test result to the expectation it relates to?
-  - **Answer**: 
+  - **Answer**: Each stored test result includes the test name (e.g. `test-unicode1`), which maps to a concrete test source file. These test files are referenced in TSF statements (e.g. `NPF-01.1`) that are linked to their parent Expectations (e.g. `NPF-01`). This allows us to trace from an individual test result to the corresponding Expectation.
 - Can we identify precisely which environment (software and hardware) were used?
-  - **Answer**: 
+  - **Answer**: For CI runs we can identify the software environment (OS image, compiler, and configuration) via the stored metadata and `list_of_test_environments.md` (JLS-17, JLS-18). The exact GitHub-hosted hardware is only roughly known and is not considered critical for this library.
 - How many pass/fail results would be expected, based on the scheduled tests?
-  - **Answer**: 
+  - **Answer**: All scheduled unit and integration tests are expected to pass (zero failures).
 - Do we have all of the expected results?
-  - **Answer**: 
+  - **Answer**: Yes, for the selected workflows we typically have results for each run, potential gaps arise when CI runs are skipped or cancelled, or due to storge limitation. 
 - Do we have time-series data for all of those results?
-  - **Answer**: 
+  - **Answer**: Stored test results are timestamped and can be queried as a time series (JLS-18, JLS-45), but due to storage limits we only keep a truncated history rather than a complete time series over the whole project lifetime.
 - If there are any gaps, do we understand why?
-  - **Answer**: 
+  - **Answer**: Yes, gaps arise by design from the memory sensitive storage strategy (only initial snapshots and relevant changes are kept, see TSF/scripts/README.md and JLS-45), from the fixed size limits on the persistent database, and from the fact that we do not collect runtime monitoring data for deployed instances yet (see AOU-09, AOU-18 and AOU-19).
 - Are the test validation strategies credible and appropriate?
-  - **Answer**: 
+  - **Answer**: Yes, the upstream nlohmann/json test suite is extensive and is complemented by additional TSF-related tests. These tests are executed on each change and on a daily schedule via CI (JLS-01, JLS-22), and their results are stored and analysed through TA-DATA and TA-ANALYSIS.
 - What proportion of the implemented tests are validated?
-  - **Answer**: 
+  - **Answer**: For the CI workflows, all implemented automated unit and integration tests are executed and their results are captured in the persistent database.
 - Have the tests been verified using known good and bad data?
-  - **Answer**:
+  - **Answer**: Yes, the upstream test suite of nlohmann/json uses dedicated JSON test data (including JSON parsing test suite: https://github.com/nlohmann/json_test_data/tree/master/json_tests and the big list of naughty strings in `json_test_data`: https://github.com/nlohmann/json_test_data/tree/master/big-list-of-naughty-strings) and the parsers are fuzz-tested 24/7 via Google OSS-Fuzz, exercising many known-good and intentionally malformed inputs.
