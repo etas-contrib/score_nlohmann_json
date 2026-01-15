@@ -38,7 +38,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |
 
 
 
@@ -176,7 +177,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -312,7 +314,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |N/A|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -429,7 +432,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -565,7 +569,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |N/A|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |
 
 
 
@@ -635,7 +640,7 @@ monitored deployments.
 
 ---
 
-### TA-FIXES | Reviewed: ✔ | Score: 0.39286 
+### TA-FIXES | Reviewed: ✔ | Score: 0.34375 
 In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied.
 
 
@@ -643,7 +648,7 @@ In the nlohmann/json repository, known bugs or misbehaviours are analysed and tr
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.52 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.50 | ✔ Item Reviewed<br>✔ Link Reviewed |
 
 **Supporting Items:**
 
@@ -651,11 +656,12 @@ In the nlohmann/json repository, known bugs or misbehaviours are analysed and tr
 | --- | --- | --- | --- |
 | [JLS-05](JLS.md#jls-05)  | The nlohmann/json library is widely used and actively maintained; bugs and misbehaviours are tracked publicly and transparently. | 1.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-04](JLS.md#jls-04)  | External dependencies within nlohmann/json are checked for potential security vulnerabilities with each pull request to main. Merging is blocked until all warnings are resolved. | 1.00 | ✔ Item Reviewed<br>✔ Link Reviewed |
-| [JLS-11](JLS.md#jls-11)  | Outstanding bugs or misbehaviours are analyzed within eclipse-score/inc_nlohmann_json to determine whether they are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-11](JLS.md#jls-11)  | Outstanding bugs or misbehaviours are analyzed within eclipse-score/inc_nlohmann_json to determine whether they are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-30](JLS.md#jls-30)  | Outstanding CVEs are analyzed within eclipse-score/inc_nlohmann_json to determine whether they can be dismissed, and/or are relevant for S-CORE's use cases of the nlohmann/json library. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-29](JLS.md#jls-29)  | Known bugs, misbehaviours and CVEs are analyzed and either fixed or mitigated in the nlohmann/json repository. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-28](JLS.md#jls-28)  | Outstanding bugs and misbehaviours are triaged in the nlohmann/json repository. | 0.00 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-33](JLS.md#jls-33)  | Outstanding CVEs are triaged in the nlohmann/json repository. | 0.75 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [JLS-57](JLS.md#jls-57)  | Outstanding bugs or misbehaviours of nlohmann/json are fetched and saved within eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 
 
 
@@ -673,13 +679,14 @@ _None_
 
 ![No Image](figs/TA-FIXES.svg)
 
-|date-time|TA-FIXES|JLS-05|JLS-04|JLS-11|JLS-30|JLS-29|JLS-28|JLS-33|
-|-|-|-|-|-|-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2025-12-10 14:14:18|0.11 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
-|2025-12-16 13:14:25|0.38 |0.88 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
-|2026-01-12 14:03:00|0.39 |1.00 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
-|2026-01-12 14:50:33.963903|0.39 |1.00 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |
+|date-time|TA-FIXES|JLS-05|JLS-04|JLS-11|JLS-30|JLS-29|JLS-28|JLS-33|JLS-57|
+|-|-|-|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |N/A|
+|2025-12-10 14:14:18|0.11 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.75 |N/A|
+|2025-12-16 13:14:25|0.38 |0.88 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |N/A|
+|2026-01-12 14:03:00|0.39 |1.00 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |N/A|
+|2026-01-15 09:03:37|0.34 |1.00 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |0.00 |
+|2026-01-15 09:53:53.821650|0.34 |1.00 |1.00 |0.00 |0.00 |0.00 |0.00 |0.75 |0.00 |
 
 
 
@@ -826,7 +833,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -980,7 +988,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |N/A|0.90 |N/A|N/A|N/A|
 |2025-12-16 13:14:25|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.32 |1.00 |0.00 |0.90 |0.00 |0.00 |0.00 |
 
 
 
@@ -1145,7 +1154,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |N/A|N/A|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1271,7 +1281,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |N/A|N/A|N/A|N/A|N/A|N/A|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1391,7 +1402,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1579,7 +1591,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |N/A|0.00 |0.00 |N/A|N/A|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1707,7 +1720,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |N/A|N/A|0.90 |N/A|
 |2025-12-16 13:14:25|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
 |2026-01-12 14:03:00|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
-|2026-01-12 14:50:33.963903|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
+|2026-01-15 09:03:37|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
+|2026-01-15 09:53:53.821650|0.18 |0.00 |0.00 |0.00 |0.90 |0.00 |
 
 
 
@@ -1799,6 +1813,7 @@ All tests for the nlohmann/json library, and its build and test environments, ar
 | [JLS-02](JLS.md#jls-02)  | Fuzz testing is used in the nlohmann/json repository to uncover edge cases and failure modes throughout development. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 | [JLS-62](JLS.md#jls-62)  | All tests except the ones which are excluded when using the flag "ctest -LE not_reproducible" are reproducible. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
 | [JLS-61](JLS.md#jls-61)  | Any Github Actions used in the testing process are pinned to specific commit SHAs to ensure consistent action behavior across runs. | 0.00 | ⨯ Item Reviewed<br>✔ Link Reviewed |
+| [JLS-58](JLS.md#jls-58)  | Github hosted runners are used as the test environment for eclipse-score/inc_nlohmann_json. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 
 
@@ -1816,13 +1831,14 @@ _None_
 
 ![No Image](figs/TA-TESTS.svg)
 
-|date-time|TA-TESTS|JLS-16|JLS-02|JLS-62|JLS-61|
-|-|-|-|-|-|-|
-|2025-11-26 12:04:09|0.00 |0.00 |0.00 |N/A|N/A|
-|2025-12-10 14:14:18|0.00 |0.00 |0.00 |N/A|N/A|
-|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |
+|date-time|TA-TESTS|JLS-16|JLS-02|JLS-62|JLS-61|JLS-58|
+|-|-|-|-|-|-|-|
+|2025-11-26 12:04:09|0.00 |0.00 |0.00 |N/A|N/A|N/A|
+|2025-12-10 14:14:18|0.00 |0.00 |0.00 |N/A|N/A|N/A|
+|2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |N/A|
+|2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |N/A|
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -1890,7 +1906,7 @@ nlohmann/json library components, configurations and tools are updated under spe
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.52 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [TT-CHANGES](TT.md#tt-changes)  | The nlohmann/json library is actively maintained, with regular updates to dependencies, and changes are verified to prevent regressions. | 0.50 | ✔ Item Reviewed<br>✔ Link Reviewed |
 
 **Supporting Items:**
 
@@ -1925,7 +1941,8 @@ _None_
 |2025-12-10 14:14:18|0.38 |0.35 |0.00 |0.00 |1.00 |0.00 |0.90 |
 |2025-12-16 13:14:25|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
 |2026-01-12 14:03:00|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
-|2026-01-12 14:50:33.963903|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
+|2026-01-15 09:03:37|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
+|2026-01-15 09:53:53.821650|0.65 |0.00 |1.00 |1.00 |1.00 |0.00 |0.90 |
 
 
 
@@ -2036,7 +2053,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |
 
 
 

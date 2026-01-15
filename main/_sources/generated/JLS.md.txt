@@ -41,7 +41,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -111,7 +112,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -153,7 +155,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -167,7 +170,7 @@ External dependencies within nlohmann/json are checked for potential security vu
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>✔ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>✔ Link Reviewed |
 | [TA-INPUTS](TA.md#ta-inputs)  | All inputs to the nlohmann/json library are assessed, to identify potential risks and issues. | 0.32 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
@@ -253,7 +256,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|1.00 |
 |2026-01-12 14:03:00|1.00 |
-|2026-01-12 14:50:33.963903|1.00 |
+|2026-01-15 09:03:37|1.00 |
+|2026-01-15 09:53:53.821650|1.00 |
 
 
 
@@ -267,7 +271,7 @@ The nlohmann/json library is widely used and actively maintained; bugs and misbe
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -350,7 +354,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.88 |
 |2026-01-12 14:03:00|1.00 |
-|2026-01-12 14:50:33.963903|1.00 |
+|2026-01-15 09:03:37|1.00 |
+|2026-01-15 09:53:53.821650|1.00 |
 
 
 
@@ -400,7 +405,8 @@ _None_
 |2025-12-10 14:14:18|0.35 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -450,7 +456,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|1.00 |
 |2026-01-12 14:03:00|1.00 |
-|2026-01-12 14:50:33.963903|1.00 |
+|2026-01-15 09:03:37|1.00 |
+|2026-01-15 09:53:53.821650|1.00 |
 
 
 
@@ -512,7 +519,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -560,7 +568,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -609,13 +618,14 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
 ---
 
-### JLS-11 | Reviewed: ✔ | Score: 0.0 
+### JLS-11 | Reviewed: ⨯ | Score: 0.0 
 Outstanding bugs or misbehaviours are analyzed within eclipse-score/inc_nlohmann_json to determine whether they are relevant for S-CORE's use cases of the nlohmann/json library.
 
 aschemmel-tech: most but not all issues are analyzed for impact on S-CORE.
@@ -625,7 +635,7 @@ aschemmel-tech: most but not all issues are analyzed for impact on S-CORE.
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -635,13 +645,7 @@ _None_
 
 **References:**
 
-- `website: https://github.com/eclipse-score/inc_nlohmann_json/blob/save_historical_data/TSF/misbehaviours.md`
-
-
-`https://github.com/eclipse-score/inc_nlohmann_json/blob/save_historical_data/TSF/misbehaviours.md`
-	- List of outstanding bugs as well as fixes for developed code that are outstanding, not yet applied.
-
-
+_None_
 
 
 
@@ -659,7 +663,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -709,7 +714,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|1.00 |
 |2026-01-12 14:03:00|1.00 |
-|2026-01-12 14:50:33.963903|1.00 |
+|2026-01-15 09:03:37|1.00 |
+|2026-01-15 09:53:53.821650|1.00 |
 
 
 
@@ -771,7 +777,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -820,7 +827,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -8406,7 +8414,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -8571,7 +8580,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -9543,7 +9553,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -9613,7 +9624,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -9872,9 +9884,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y graphviz
-          pip install --upgrade pip
-          pip install PyYAML requests
-          pip install git+https://gitlab.com/CodethinkLabs/trustable/trustable@v2025.10.22
+          pip install --require-hashes -r .devcontainer/S-CORE/requirements.txt
+          pip install git+https://gitlab.com/CodethinkLabs/trustable/trustable@83b4023d7e2bd2b984db2c81543266ce09a7cbf7
 
       - name: Install tools
         run: |
@@ -10030,7 +10041,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11181,7 +11193,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11236,7 +11249,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11286,7 +11300,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -11341,7 +11356,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11394,7 +11410,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11436,7 +11453,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11452,7 +11470,7 @@ aschemmel-tech: no triage done
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -11486,7 +11504,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11502,7 +11521,7 @@ aschemmel-tech: evidences support bugs and CVE fixing, no mitigation actions are
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -11543,7 +11562,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11559,7 +11579,7 @@ aschemmel-tech: In my understanding bot evidences support the statement complete
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -11600,7 +11620,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11648,7 +11669,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -11698,7 +11720,8 @@ _None_
 |2025-12-10 14:14:18|1.00 |
 |2025-12-16 13:14:25|1.00 |
 |2026-01-12 14:03:00|1.00 |
-|2026-01-12 14:50:33.963903|1.00 |
+|2026-01-15 09:03:37|1.00 |
+|2026-01-15 09:53:53.821650|1.00 |
 
 
 
@@ -11714,7 +11737,7 @@ aschemmel-tech: Security vulnerabilities reporting asks for severities, but this
 
 | Item  | Summary  | Score  | Status  |
 | --- | --- | --- | --- |
-| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.39 | ✔ Item Reviewed<br>⨯ Link Reviewed |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>⨯ Link Reviewed |
 
 **Supporting Items:**
 
@@ -11748,7 +11771,8 @@ _None_
 |2025-12-10 14:14:18|0.75 |
 |2025-12-16 13:14:25|0.75 |
 |2026-01-12 14:03:00|0.75 |
-|2026-01-12 14:50:33.963903|0.75 |
+|2026-01-15 09:03:37|0.75 |
+|2026-01-15 09:53:53.821650|0.75 |
 
 
 
@@ -12000,7 +12024,8 @@ _None_
 |2025-12-10 14:14:18|0.90 |
 |2025-12-16 13:14:25|0.90 |
 |2026-01-12 14:03:00|0.90 |
-|2026-01-12 14:50:33.963903|0.90 |
+|2026-01-15 09:03:37|0.90 |
+|2026-01-15 09:53:53.821650|0.90 |
 
 
 
@@ -12057,7 +12082,8 @@ _None_
 |2025-12-10 14:14:18|0.00 |
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12349,7 +12375,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12402,7 +12429,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12455,7 +12483,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12508,7 +12537,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12554,7 +12584,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12614,7 +12645,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12667,7 +12699,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -12720,7 +12753,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13127,7 +13161,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13173,7 +13208,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13219,7 +13255,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13348,7 +13385,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13745,7 +13783,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13813,7 +13852,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13857,7 +13897,8 @@ _None_
 |-|-|-|-|-|
 |2025-12-16 13:14:25|0.00 |0.00 |0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |0.00 |0.00 |
 
 
 
@@ -13899,7 +13940,98 @@ _None_
 |-|-|-|
 |2025-12-16 13:14:25|0.00 |0.00 |
 |2026-01-12 14:03:00|0.00 |0.00 |
-|2026-01-12 14:50:33.963903|0.00 |0.00 |
+|2026-01-15 09:03:37|0.00 |0.00 |
+|2026-01-15 09:53:53.821650|0.00 |0.00 |
+
+
+
+---
+
+### JLS-57 | Reviewed: ⨯ | Score: 0.0 
+Outstanding bugs or misbehaviours of nlohmann/json are fetched and saved within eclipse-score/inc_nlohmann_json.
+
+
+**Supported Requests:**
+
+| Item  | Summary  | Score  | Status  |
+| --- | --- | --- | --- |
+| [TA-FIXES](TA.md#ta-fixes)  | In the nlohmann/json repository, known bugs or misbehaviours are analysed and triaged, and critical fixes or mitigations are implemented or applied. | 0.34 | ✔ Item Reviewed<br>✔ Link Reviewed |
+
+**Supporting Items:**
+
+_None_
+
+
+
+**References:**
+
+- `website: https://github.com/eclipse-score/inc_nlohmann_json/blob/save_historical_data/TSF/misbehaviours.md`
+
+
+`https://github.com/eclipse-score/inc_nlohmann_json/blob/save_historical_data/TSF/misbehaviours.md`
+	- List of outstanding bugs as well as fixes for developed code that are outstanding, not yet applied.
+
+
+
+
+
+**Fallacies:**
+
+_None_
+
+**Graph:**
+
+![No Image](figs/JLS-57.svg)
+
+|date-time|JLS-57|
+|-|-|
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
+
+
+
+---
+
+### JLS-58 | Reviewed: ⨯ | Score: 0.0 
+Github hosted runners are used as the test environment for eclipse-score/inc_nlohmann_json.
+
+
+**Supported Requests:**
+
+| Item  | Summary  | Score  | Status  |
+| --- | --- | --- | --- |
+| [TA-TESTS](TA.md#ta-tests)  | All tests for the nlohmann/json library, and its build and test environments, are constructed from controlled/mirrored sources and are reproducible, with any exceptions documented. | 0.00 | ⨯ Item Reviewed<br>⨯ Link Reviewed |
+
+**Supporting Items:**
+
+_None_
+
+
+
+**References:**
+
+- `website: https://github.com/eclipse-score/inc_nlohmann_json/actions`
+
+
+`https://github.com/eclipse-score/inc_nlohmann_json/actions`
+	- Github actions page showing that eclipse-score/inc_nlohmann_json is using Github host environment.
+
+
+
+
+
+**Fallacies:**
+
+_None_
+
+**Graph:**
+
+![No Image](figs/JLS-58.svg)
+
+|date-time|JLS-58|
+|-|-|
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -13945,7 +14077,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -14129,7 +14262,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -14189,7 +14323,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -14242,7 +14377,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -14302,7 +14438,8 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
 
 
@@ -14348,5 +14485,6 @@ _None_
 |-|-|
 |2025-12-16 13:14:25|0.00 |
 |2026-01-12 14:03:00|0.00 |
-|2026-01-12 14:50:33.963903|0.00 |
+|2026-01-15 09:03:37|0.00 |
+|2026-01-15 09:53:53.821650|0.00 |
 
