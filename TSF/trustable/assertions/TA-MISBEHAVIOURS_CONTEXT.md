@@ -3,7 +3,7 @@ level: 1.1
 normative: false
 ---
 
-(Note: The guidance, evidence, confidence scoring and checklist sections below are copied from [CodeThink's documentation of TSF](https://codethinklabs.gitlab.io/trustable/trustable/trustable/TA.html). However, the answers to each point in the evidence list and checklist are specific to this project.)
+(Note: The guidance, evidence, confidence scoring and checklist sections below are copied from [CodeThink's documentation of TSF](https://pages.eclipse.dev/eclipse/tsf/tsf/trustable/TA.html). However, the answers to each point in the evidence list and checklist are specific to this project.)
 
 The goal of TA-MISBEHAVIOURS is to force engineers to think critically about their work.
 This means understanding and mitigating as many of the situations that cause the
@@ -89,20 +89,20 @@ established and reusable solutions.
 **Suggested evidence**
 
 - List of identified Misbehaviours
-  - **Answer**: 
+  - **Answer**: A list of Misbehaviours was identified through STPA risk analysis (risk_analysis.md). Upstream bug tracking (JLS-11 and nlohmann_misbehaviours_comments.md) is used as complementary empirical evidence to confirm coverage and update the list where needed.
 - List of Expectations for mitigations addressing identified Misbehaviours
-  - **Answer**: 
+  - **Answer**: Mitigation expectations are expressed implicitly through (a) documented Quality assurance (https://json.nlohmann.me/community/quality_assurance) requirements and (b) concrete mitigation mechanisms captured by existing Statements: JLS-02 (fuzzing), JLS-31 (static analysis), JLS-25 (review/security policy), JLS-24 (defined failure mode via exceptions), and WFJ-06 (input validation via accept()).
 - Risk analysis
-  - **Answer**: 
+  - **Answer**: Risk analysis has been performed (see docs/risk_analysis.md).
 - Test analysis, including:
   - False negative tests
-    - **Answer**: 
+    - **Answer**: Fault induction via fuzzing (see JLS-02) provides a practical approach to triggering failures and edge cases that normal functional tests might miss.
   - Exception handling tests
-    - **Answer**: 
-  - Stress tests
-    - **Answer**: 
+    - **Answer**: The nlohmann/json library contains a set of exception handling tests, along with custom exception types, as described in JLS-24.
+  - Stress tests.
+    - **Answer**: Stress tests target system-level behavior under load, while nlohmann/json is a stateless JSON library. There is no long-lived state, connection pool, thread pool, queue or similar in nlohmann/json. Therefore, stress tests are generally not relevant for nlohmann/json.
   - Soak tests
-    - **Answer**: 
+    - **Answer**: Soak tests are used to investigate long-running behaviour, not single operations like a JSON library. Soak tests are therefore not needed for the nlohmann/json library.
 
 **Confidence scoring**
 
@@ -113,28 +113,26 @@ considered against the list of Expectations.
 **Checklist**
 
 - How has the list of misbehaviours varied over time?
-  - **Answer**: 
+  - **Answer**: The list of misbehaviours for nlohmann/json (https://github.com/nlohmann/json/issues), as well as its history and development, is collected using Github. Statistics, e.g. about the number of open issues over time, are currently not tracked.
 - How confident can we be that this list is comprehensive?
-  - **Answer**: 
+  - **Answer**: Due to the collaborative nature of the open source community, we deem it quite unlikely, but not impossible, that there are any known misbehaviours which are not reported to the nlohmann/json repository.
 - How well do the misbehaviours map to the expectations?
-  - **Answer**: 
+  - **Answer**: The identified misbehaviours do not necessarily all have a direct impact on the defined expectations. A mapping of any misbehaviour to the expectations has to be done on a case-by-case basis.
 - Could some participants have incentives to manipulate information?
-  - **Answer**: 
+  - **Answer**:  We can not think of any incentive that any collaborateur could have to manipulate the information.
 - Could there be whole categories of misbehaviours still undiscovered?
-  - **Answer**: 
+  - **Answer**: Due to the wide use and long-standing development of the library it is quite unlikely that any major misbehaviours, in particular regarding the parsing and validating of JSON data in the sense of RFC-8259, is undiscovered. 
 - Can we identify misbehaviours that have been understood but not specified?
-  - **Answer**: 
+  - **Answer**: We currently do not identify any misbehaviours that have been understood but not specified.
 - Can we identify some new misbehaviours, right now?
-  - **Answer**: 
+  - **Answer**: No, currently no new misbehaviors can be identified.
 - Is every misbehaviour represented by at least one fault induction test?
-  - **Answer**: 
-- Are fault inductions used to demonstrate that tests which usually pass can
-  and do fail appropriately?
-  - **Answer**: 
+  - **Answer**: The expected behaviour of nlohmann/json is described by JLS-24 and its substatements in the trustable graph. For every substatement at least one fault induction test is performed. Thus, every misbehaviour is represented by at least one fault induction test.
+- Are fault inductions used to demonstrate that tests which usually pass can and do fail appropriately?
+  - **Answer**: The project uses several forms of fault induction on the library-behaviour level (malformed JSON, invalid API usage, simulated allocation failures, and fuzzing). Dedicated tests assert that these induced faults cause the library to fail in a well‑defined, expected way (e.g. by throwing specific exceptions). While the test framework itself is not tested by fault induction, there are some statements where positive and negative tests actively show expected failure behaviour of the library under induced faulty input, that pass with well-formed data (e.g., TIJ-04.1, evidence: nst's JSONTestSuite). CI then confirms that these "failure‑expecting" tests keep behaving as specified (JLS-76.). Due to the very comprehensive general fault induction testing employed, we see the instances of explicitly failing tests that usually pass rather as representative evidence than requiring a one-to-one matching to every graph leaf. 
 - Are all the fault induction results actually collected?
-  - **Answer**: 
+  - **Answer**: Partially. For Unit / regression tests: their results are only captured as normal test pass/fail status and CI logs; there is no separate, persistent database of all induced faults and outcomes in the repository. For Fuzz tests (OSS‑Fuzz): the fuzzing infrastructure stores crashing inputs, logs, and statistics on the OSS‑Fuzz side, not in the nlohmann/json repo itself. See JLS-76 for further information.
 - Are the results evaluated?
-  - **Answer**: 
-- Do input analysis findings on verifiable tool or component claims and features
-identify additional misbehaviours or support existing mitigations?
-  - **Answer**: 
+  - **Answer**: Yes. nlohmann/json has a multi‑layered QA process where all fault‑induction results (from unit tests, dynamic analysis, and fuzzing) are systematically evaluated. The CI pipeline runs 1000+ doctest-based tests across 50+ compiler/standard-library/platform configurations, with 100% code‑coverage targets; any failure (including sanitizer/Valgrind runs, static analysis warnings, or CI fuzz/CIFuzz/OSS‑Fuzz crashes) blocks merging, is inspected by maintainers, fixed, and typically covered by additional regression tests, in line with the documented quality assurance process. Together with the collection of fault‑induction results asserted in JLS‑76, this establishes a continuous loop from induced faults to analysed results to corrective actions.
+- Do input analysis findings on verifiable tool or component claims and features identify additional misbehaviours or support existing mitigations?
+  - **Answer**: Currently, there is no analysis which identifies additional misbehaviours. The only such analysis is indirectly via the analysis of the fuzz testing, which currently does not identify additional misbehaviours.
